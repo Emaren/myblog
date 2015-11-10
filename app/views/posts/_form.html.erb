@@ -1,0 +1,9 @@
+<%= @post.errors.full_messages.join(", ") %>
+
+<%= form_for @post do |p| %>
+<p><%= p.label(:title) %></p>
+<p><%= p.text_field(:title) %></p>
+<p><%= p.label(:body) %></p>
+<p><%= p.text_area(:body) %></p>
+<p><%= p.submit %></p>
+<% end %>
