@@ -7,14 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to "Home", root_path %> |
-<%= link_to "About", about_path %> |
-<%= link_to "New Post", new_post_path %> |
-<%= link_to "Post Archive", posts_path %> |
 
 
-<hr>
 
+<%= render 'nav' %>
 
 
 <%= yield %>

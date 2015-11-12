@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
 
+  has_many :comments
+
   validates :title, presence:   {message: "Must have a title!"},
                     uniqueness: {message: "Title already exists database!"},
                     length:     {minimum: 1}

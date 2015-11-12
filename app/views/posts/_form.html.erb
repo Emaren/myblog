@@ -1,9 +1,28 @@
+
+
 <%= @post.errors.full_messages.join(", ") %>
 
-<%= form_for @post do |p| %>
-<p><%= p.label(:title) %></p>
-<p><%= p.text_field(:title) %></p>
-<p><%= p.label(:body) %></p>
-<p><%= p.text_area(:body) %></p>
-<p><%= p.submit %></p>
+<strong>
+<%= form_for @post do url: post_path(@post), method: :patch do |f| %>
+<p><%= f.label(:title) %></p>
+<p><%= f.text_field(:title) %></p>
+<p><%= f.label(:body) %></p>
+<p><%= f.text_area(:body) %></p>
+<p><%= f.submit %></p>
+</strong>
 <% end %>
+
+<h2>Add a comment: </h2>
+
+<%= form_for @post do |f| %>
+
+<p>
+  <%= f.label :body %> <br>
+  <%= f.text_field :body %>
+</p>
+<p>
+<%= f.submit %>
+</p>
+<% end %>
+
+<%= link_to 'Back', posts_path %>
