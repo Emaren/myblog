@@ -3,7 +3,7 @@
 <%= @post.errors.full_messages.join(", ") %>
 
 <strong>
-<%= form_for @post do url: post_path(@post), method: :patch do |f| %>
+<%= form_for @post do |f| %>
 <p><%= f.label(:title) %></p>
 <p><%= f.text_field(:title) %></p>
 <p><%= f.label(:body) %></p>
